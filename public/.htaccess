@@ -1,0 +1,8 @@
+RewriteEngine On
+# RewriteBase /shop3/public/
+RewriteBase /
+
+# Wenn die Datei oder das Verzeichnis nicht existiert, leite auf index.php um
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
